@@ -66,6 +66,31 @@ body {
   padding: 0 15px;
 }
 
+.menu {
+  color: var(--text-color2);
+
+  &__body {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    font-size: 14px;
+    transition: color 0.4s ease;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--text-color);
+        transition: color 0.4s ease;
+      }
+    }
+
+    &:active {
+      color: var(--accent-color);
+    }
+  }
+}
+
 .title {
   font-size: 36px;
   font-weight: 600;
@@ -82,25 +107,31 @@ body {
   letter-spacing: 3px;
   color: #FFFFFF;
   text-transform: uppercase;
-  // background: linear-gradient(180deg, #FFA96B -21.43%, #EE7A28 100%);
+  background: linear-gradient(180deg, #FFA96B -21.43%, #EE7A28 100%);
   border-radius: 10px;
   border: none;
   cursor: pointer;
   position: relative;
-  transition:  ease .5s;
+  z-index: 1;
   &::after {
-    content: '';
     position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
     left: 0;
     top: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
     background: linear-gradient(180deg, #FFA96B 58.75%, #EE7A28 173.44%);
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .4s ease;
   }
+
+
   @media (any-hover: hover) {
-    &:hover {
-      transition:  ease .5s;
+    &:hover::after {
+    opacity: 1;
+    transition: opacity .4s ease;
     }
   }
 
@@ -111,19 +142,18 @@ body {
     width: 300px;
     height: 40px;
   }
-}
-.a {
-  &::after {
-    content: '';
-    left: 0;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(180deg, #FFA96B 58.75%, #EE7A28 173.44%);
-    z-index: -1;
+
+  &-container {
+    width: 366px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
   }
 }
+
 .swiper-content {
   position: relative;
 }
@@ -185,10 +215,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    transition: background-color 0.4s ease;
     @media (any-hover: hover) {
       &:hover {
         background-color: var(--bg-color);
+        transition: background-color 0.4s ease;
       }
     }
 
@@ -229,7 +260,7 @@ body {
   z-index: 10;
   visibility: hidden;
   opacity: 0;
-  transition: opacity .2s;
+  transition: opacity .3s;
   pointer-events: none;
 
   &.modal-active {
@@ -307,30 +338,56 @@ body {
   &__btn {
     display: block;
     width: 100%;
-    margin: 16px auto;
+    &-container {
+      width: 100%;
+      margin: 16px auto;
+    }
   }
 
-  .form__review {
+  &__review {
     position: relative;
-    display: flex;
+    // display: flex;
     margin-bottom: 32px;
+    min-height: 100px;
+    max-height: 300px;
+    height: 100%;
+    padding: 18px 16px 54px;
+    overflow-y: scroll;
+
   }
 
   &__review-text {
-    height: 100px;
-    resize: none;
-    padding: 18px 16px;
     margin: 0;
   }
 
+  .form__add-photo {
+    width: 100%;
+    height: 100%;
+
+  }
+
   .form__review-img {
+    margin-left: auto;
     position: absolute;
     bottom: 12px;
     right: 12px;
     cursor: pointer;
   }
+
+  .a {
+    
+  }
 }
 
+[contenteditable]:empty:before {
+  content: attr(data-placeholder);
+  font-family: 'Montserrat';
+  font-size: 12px;
+  line-height: 12px;
+  color: var(--gray);
+  opacity: 0.4;
+  display: inline-block;
+  }
 
 .select {
   cursor: pointer;
@@ -343,7 +400,8 @@ body {
     }
 
     .select__body {
-      display: block;
+      visibility:visible;
+      opacity: 1;
     }
   }
 
@@ -367,7 +425,8 @@ body {
   }
 
   &__body {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     overflow: hidden;
     max-height: 0px;
     width: 100%;
@@ -378,6 +437,8 @@ body {
     font-size: 14px;
     line-height: 20px;
     position: absolute;
+    z-index: 2;
+    transition: max-height .4s ease, opacity .4s ease, visibility .4s ease;
   }
 
   &__item {
@@ -385,10 +446,11 @@ body {
     align-items: center;
     height: 40px;
     padding-left: 28px;
-
+    transition: background-color 0.2s ease;
     @media (any-hover:hover) {
       &:hover {
         background-color: var(--bg-color);
+        transition: background-color 0.2s ease;
       }
     }
 
@@ -498,6 +560,10 @@ body {
   &__content {
     display: block;
     padding: 42px 48px;
+  }
+
+  &__btn-container {
+    margin-bottom: 0;
   }
 }
 
@@ -635,38 +701,17 @@ body {
 
   &__btn {
     height: 64px;
+  }
+
+  &__btn-container {
+    height: 64px;
     margin-top: 64px;
-    position: absolute;
   }
 }
 
 .logo {
   display: flex;
   align-items: center;
-}
-
-.menu {
-  color: var(--text-color2);
-
-  &__body {
-    display: flex;
-    align-items: center;
-  }
-
-  &__link {
-    font-size: 14px;
-    transition: color 0.2s;
-
-    @media (any-hover: hover) {
-      &:hover {
-        color: var(--text-color);
-      }
-    }
-
-    &:active {
-      color: var(--accent-color);
-    }
-  }
 }
 
 .contact {
@@ -680,12 +725,12 @@ body {
     font-size: 12px;
     letter-spacing: 1px;
     cursor: pointer;
-    transition: color ease .5s, background-color ease .5s;
+    transition: color ease .4s, background-color ease .4s;
     @media (any-hover: hover) {
       &:hover {
         background-color: var(--accent-color);
         color: #fff;
-        transition: color ease .5s, background-color ease .5s;
+        transition: color ease .4s, background-color ease .4s;
       }
     }
 
@@ -695,6 +740,11 @@ body {
       width: 173px;
       height: 28px;
       font-size: 10px;
+    }
+
+    &-container {
+      width: 196px;
+      height: 31px;
     }
   }
 
@@ -785,7 +835,11 @@ body {
 
   &__btn {
     width: 336px;
-    margin-top: 50px;
+
+    &-container {
+      width: 336px;
+      margin: 50px auto 0;
+    }
   }
 
   &__text {
@@ -799,6 +853,7 @@ body {
     left: 32px;
     opacity: 0;
     z-index: 1;
+    transition: opacity 0.4s ease;
   }
 
   &__shadow {
@@ -809,18 +864,19 @@ body {
     position: absolute;
     bottom: 8px;
     opacity: 0;
+    transition: opacity 0.4s ease;
   }
 
   &__item {
     position: relative;
     cursor: pointer;
-
     @media (any-hover:hover) {
       &:hover {
 
         .locations__text,
         .locations__shadow {
           opacity: 1;
+          transition: opacity 0.4s ease;
         }
       }
     }
@@ -1225,10 +1281,11 @@ body {
     cursor: pointer;
     padding: 5px;
     margin-right: 5px;
-
+    transition: background-color 0.4s ease;
     @media (any-hover: hover) {
       &:hover {
-        background: #F7F5F5;
+        background-color: #F7F5F5;
+        transition: background-color 0.4s ease;
       }
     }
 
@@ -1239,7 +1296,6 @@ body {
 
   &__btn {
     display: block;
-    margin: 0 auto;
   }
 }
 
@@ -1345,10 +1401,15 @@ body {
       margin-top: 469px;
       margin-bottom: 24px;
     }
+  }
 
-    &-btn {
-      height: 48px;
+  &__btn {
+    height: 48px;
+    width: 342px;
+
+    &-container {
       width: 342px;
+      margin: 0 auto;
     }
   }
 }
@@ -1415,7 +1476,10 @@ body {
   }
 
   &__btn {
-    margin-top: -24px;
+
+    &-container {
+      margin: -24px auto 0;
+    }
   }
 }
 
@@ -1536,10 +1600,14 @@ body {
 
 .icon {
   margin-left: 24px;
-
+  path {
+    transition: fill 0.4s ease;
+  }
   @media (any-hover:hover) {
+   
     &:hover path {
       fill: #919191;
+      transition: fill 0.4s ease;
     }
   }
 
@@ -1549,3 +1617,4 @@ body {
 }
 
 /* /FOOTER */
+

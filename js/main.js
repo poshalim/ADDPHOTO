@@ -238,3 +238,13 @@ saveBtn.addEventListener('click', e => {
 })
 
 
+// add photo 
+
+let btn = document.querySelector('.form__review-img')
+btn.addEventListener('click', readFile)
+
+function readFile() {
+  let input = document.createElement('input');
+  input.type = 'file';
+  input.click();
+}
