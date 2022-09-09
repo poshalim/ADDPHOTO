@@ -30,7 +30,7 @@ const workSwiper2 = new Swiper('.work-gallery__slider', {
 
 
 const locationSwiper = new Swiper('.locations__slider', {
-  slidesPerView: 3,
+  slidesPerView: 1,
   initialSlide: 1,
   centeredSlides: true,
   loop: true,
@@ -40,6 +40,14 @@ const locationSwiper = new Swiper('.locations__slider', {
     nextEl: '.locations__next',
     prevEl: '.locations__prev',
   },
+
+  breakpoints: {
+    // when window width is >= 375px
+    376: {
+    slidesPerView: 3,
+    spaceBetween: 27,
+    },
+  }
 });
 
 const locationSwiper2 = new Swiper('.locations-gallery__slider', {
@@ -49,21 +57,34 @@ const locationSwiper2 = new Swiper('.locations-gallery__slider', {
   navigation: {
     nextEl: '.locations-gallery__next',
     prevEl: '.locations-gallery__prev',
-  },
+  }, 
 });
 
 
 const reviewsSwiper = new Swiper('.reviews__slider', {
-  slidesPerView: 3,
+  slidesPerView: 1,
   initialSlide: 1,
-  centeredSlides: true,
   loop: true,
-  spaceBetween: 16,
   speed: 700,
   navigation: {
     nextEl: '.reviews__next',
     prevEl: '.reviews__prev',
   },
+
+  breakpoints: {
+    // when window width is >= 375px
+    376: {
+    slidesPerView: 2,
+    spaceBetween: 21,
+    centeredSlides: false,
+    },
+
+    1025: {
+      slidesPerView: 3,
+      spaceBetween: 16,
+      centeredSlides: true,
+      },
+    }
 });
 
 

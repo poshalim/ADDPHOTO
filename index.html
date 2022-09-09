@@ -13,11 +13,16 @@
     <header class="header">
         <div class="container">
             <div class="header__top">
-                <a href="#" class="logo">
-                    <img src="img/logo.svg" alt="logo">
+                <a href="#" class="logo header__logo">
+                    <img class="header__logo-img" src="img/logo.svg" alt="logo">
                 </a>
                 <div class="header__navigation">
                     <nav class="header__menu menu">
+                        <div class="menu__head">
+                            <div class="row"></div>
+                            <div class="row"></div>
+                            <div class="row"></div>
+                        </div>
                         <ul class="menu__body header__body">
                             <li class="menu__item"><a href="#" class="menu__link">Портфолио</a></li>
                             <li class="menu__item"><a href="#" class="menu__link">Виды работ</a></li>
@@ -32,13 +37,16 @@
                         <button class="contact__btn">ОБРАТНЫЙ ЗВОНОК</button>
                     </div>
                     <a class="contact__phone" href="tel:+74993446091">+7 (499) 344 60 91</a>
+                    <a href="#"><img class="contact__feedback" src="img/header-feedback.svg" alt="позвонить"></a>
+                    
                 </div>
+                
             </div>
         </div>
         <div class="header__content">
             <div class="container">
                 <div class="header__inner">
-                    <h1 class="header__title">Профессиональная фотосессия в студии</h1>
+                    <h1 class="header__title"><span class="header__title--spacing">Профессиональная</span> фотосессия в студии</h1>
                     <h2 class="header__subtitle">Наша фотостудия позволит исполнить ваши мечты</h2>
                     <p class="header__text">Фотографии стали неотъемлемой частью нашей жизни. Это теперь не просто
                         памятные снимки в альбомах, ныне фото становиться способом понравиться окружающим, получить
@@ -138,7 +146,7 @@
             <div class="container video__container">
                 <h3 class="video__title title">Оформление фотостудии</h3>
                 <div class="video__content">
-                    <svg class="play" width="135" height="156" viewBox="0 0 135 156" fill="none"
+                    <svg class="play video__play" width="135" height="156" viewBox="0 0 135 156" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M135 78L-7.33505e-06 155.942L-5.26633e-07 0.0577105L135 78Z" fill="#D8D8D8" />
                     </svg>
@@ -146,7 +154,7 @@
             </div>
         </section>
         <section class="services">
-            <div class="container">
+            <div class="container services__container">
                 <h3 class="services__title title">Виды услуг</h3>
                 <div class="services__gallery">
                     <div class="services__item">
@@ -157,7 +165,7 @@
                         <img class="services__image" src="img/services/02.jpg" alt="">
                         <p class="services__text">Фотосессия для подростков</p>
                     </div>
-                    <div class="services__item">
+                    <div class="services__item services__item--three">
                         <img class="services__image" src="img/services/03.jpg" alt="">
                         <p class="services__text">Парная фотосессия</p>
                     </div>
@@ -181,7 +189,7 @@
                         <img class="services__image" src="img/services/08.jpg" alt="">
                         <p class="services__text">Фотосессия для девушек</p>
                     </div>
-                    <div class="services__item">
+                    <div class="services__item services__item--nine">
                         <img class="services__image" src="img/services/09.jpg" alt="">
                         <p class="services__text">Фотосессия для беременных</p>
                     </div>
@@ -189,7 +197,7 @@
                         <img class="services__image" src="img/services/10.jpg" alt="">
                         <p class="services__text">Фотосессия с животными</p>
                     </div>
-                    <div class="services__item">
+                    <div class="services__item services__item--eleven">
                         <img class="services__image" src="img/services/11.jpg" alt="">
                         <p class="services__text">Фотосессия «Деловой стиль»</p>
                     </div>
@@ -197,7 +205,7 @@
             </div>
         </section>
         <section class="stages">
-            <div class="container">
+            <div class="container stages__container">
                 <h3 class="stages__title title">Этапы работ</h3>
                 <div class="stages__items">
                     <div class="stages__item stages__item--one">
@@ -454,11 +462,11 @@
                 <div class="gift__banner banner">
                     <div class="banner__text">
                         <p class="banner__subtitle">СЕРТИФИКАТ НА ФОТОСЕССИЮ</p>
-                        <p class="banner__title">Это подарок,который западает в душу</p>
+                        <p class="banner__title">Это подарок,<br>который западает<br> в душу</p>
                         <ul class="banner__list">
                             <li class="banner__item">Креативное оформление</li>
                             <li class="banner__item">Открытый календарь</li>
-                            <li class="banner__item">Открытый календарь</li>
+                            <li class="banner__item">Всё включено</li>
                         </ul>
                     </div>
                     <div class="gift__buy">
@@ -526,13 +534,16 @@
         <section class="feedback">
             <div class="container">
                 <div class="feedback__inner">
-                    <div class="feedback__location">
-                        <a href="#" class="logo feedback__logo"><img src="img/feedback/logo.svg" alt=""></a>
-                        <a class="feedback__location-text" href="tel:+74993446091">+7 (499) 344 60 91</a>
-                        <a class="feedback__location-text" href="mailto:content@addmarkets.ru">content@addmarkets.ru</a>
-                        <p class="feedback__location-text">Режим работы:</p>
-                        <p class="feedback__location-time">ПН-ПТ 09:00 - 18:00</p>
+                    <div class="feedback__image">
+                        <div class="feedback__location">
+                            <a href="#" class="logo feedback__logo"><img src="img/feedback/logo.svg" alt=""></a>
+                            <a class="feedback__location-text" href="tel:+74993446091">+7 (499) 344 60 91</a>
+                            <a class="feedback__location-text" href="mailto:content@addmarkets.ru">content@addmarkets.ru</a>
+                            <p class="feedback__location-text">Режим работы:</p>
+                            <p class="feedback__location-time">ПН-ПТ 09:00 - 18:00</p>
+                        </div>
                     </div>
+                    
                     <div class="feedback__form">
                         <h3 class="feedback__title title">Форма обратной связи</h3>
                         <form class="form" action="">
