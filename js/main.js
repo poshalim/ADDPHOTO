@@ -247,6 +247,7 @@ saveBtn.addEventListener('click', e => {
   if(amount>=0&&amount<=500) {
     currentItem.querySelector('.price__item-sum').innerHTML = current
     modal.classList.remove('modal-active')
+    document.body.classList.toggle('_locked')
   } else {
     alert('Введите число от 0 до 500')
   }
@@ -269,3 +270,13 @@ function readFile() {
   input.type = 'file';
   input.click();
 }
+
+
+// menu
+document.querySelector('.header__menu').addEventListener('click', e => {
+if(e.target.classList.contains('header__menu')||e.target.closest('.header__menu')) {
+  let body = e.target.closest('.header__navigation').querySelector('.header__body')
+  body.classList.toggle('header__body--active')
+  document.body.classList.toggle('_locked')
+}
+})
