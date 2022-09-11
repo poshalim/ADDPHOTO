@@ -275,7 +275,7 @@ function readFile() {
 // menu
 document.querySelector('.header__menu').addEventListener('click', e => {
 if(e.target.classList.contains('header__menu')||e.target.closest('.header__menu')) {
-  let body = e.target.closest('.header__navigation').querySelector('.header__body')
+  let body = e.target.closest('.header__menu').querySelector('.header__body')
   body.classList.toggle('header__body--active')
   document.body.classList.toggle('_locked')
 }

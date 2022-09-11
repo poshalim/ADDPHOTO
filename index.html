@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADDPHOTO</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
 
 <body>
@@ -22,12 +23,12 @@
                     <div class="menu__line"></div>
                 </div>
                 <ul class="menu__body header__body">
-                    <li class="menu__item"><a href="#" class="menu__link">Портфолио</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Виды работ</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">О фотостудии</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Отзывы</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Услуги и цены</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+                    <li class="menu__item header__item"><a href="#" class="menu__link header__link">Портфолио</a></li>
+                    <li class="menu__item header__item"><a href="#" class="menu__link header__link">Виды работ</a></li>
+                    <li class="menu__item header__item"><a href="#" class="menu__link header__link">О фотостудии</a></li>
+                    <li class="menu__item header__item"><a href="#" class="menu__link header__link">Отзывы</a></li>
+                    <li class="menu__item header__item"><a href="#" class="menu__link header__link">Услуги и цены</a></li>
+                    <li class="menu__item header__item"><a href="#" class="menu__link header__link">Контакты</a></li>
                 </ul>
                 <div class="header__contact contact">
                     <div class="contact__btn-container btn-container">
@@ -411,6 +412,7 @@
             <div class="container">
                 <div class="info__inner">
                     <h3 class="info__title title">Фотоискусство в тренде. Любая фотоссесия ваша история</h3>
+                    
                     <div class="accordion">
                         <div class="accordion__head">
                             <p class="info__text">Мы искренни так считаем и готовы кричать эту фразу на весь мир.
@@ -574,16 +576,17 @@
                             <label class="form__text" for="name">Имя</label>
                             <input class="form__input" id="name" type="text" placeholder="Введите ваше имя">
                             <label class="form__text" for="email">E-mail</label>
-                            <input class="form__input" id="email" type="text" placeholder="Введите ваш E-mail">
+                            <input class="form__input" id="email" type="email" placeholder="Введите ваш E-mail">
                             <label class="form__text" for="tel">Телефон</label>
-                            <input class="form__input" id="tel" type="text" placeholder="Введите ваш Телефон">
+                            <input class="form__input" id="tel" type="number" placeholder="Введите ваш Телефон">
                             <div class="form__btn-container btn-container">
                                 <button class="form__btn btn" type="submit">Отправить</button>
                             </div>
                         </form>
                         <p class="feedback__desc">Нажимая кнопку «Отправить», вы даете согласие на обработку
-                            персональных данных и соглашаетесь с <u class="feedback__desc--underlined">политикой
-                                конфиденциальности</u></p>
+                            персональных данных и соглашаетесь с <a class="feedback__desc--underlined"
+                                href="#">политикой
+                                конфиденциальности</a></p>
                     </div>
                 </div>
             </div>
@@ -604,32 +607,22 @@
                 <div class="line"></div>
                 <div class="footer__social">
                     <p class="footer__social-text">Наши социальные сети:</p>
-                    <a class="icon" href=""><svg width="32" height="31" viewBox="0 0 32 31" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M30.5026 5.34545C30.0985 4.32727 29.5657 3.46364 28.6932 2.6C27.8206 1.73636 26.9481 1.20909 25.9194 0.809091C24.9274 0.427273 23.7885 0.172727 22.1169 0.0909091C20.4453 0.0181818 19.9126 0 15.66 0C11.4075 0 10.8748 0.0181818 9.20313 0.0909091C7.54069 0.172727 6.40178 0.427273 5.40064 0.818182C4.37195 1.21818 3.49939 1.74545 2.62684 2.60909C1.75429 3.47273 1.22157 4.33636 0.817444 5.35455C0.431684 6.33636 0.17451 7.46364 0.0918476 9.10909C0.0183695 10.7636 0 11.2909 0 15.5C0 19.7091 0.0183695 20.2364 0.0918476 21.8909C0.17451 23.5455 0.431684 24.6727 0.826628 25.6545C1.23076 26.6727 1.76347 27.5364 2.63603 28.4C3.50858 29.2636 4.38113 29.7909 5.40982 30.1909C6.40178 30.5727 7.54069 30.8364 9.21231 30.9091C10.8839 30.9818 11.4167 31 15.6692 31C19.9217 31 20.4545 30.9818 22.1261 30.9091C23.7885 30.8364 24.9274 30.5727 25.9286 30.1909C26.9573 29.7909 27.8298 29.2636 28.7024 28.4C29.5749 27.5364 30.1076 26.6727 30.5118 25.6545C30.8975 24.6727 31.1639 23.5455 31.2374 21.8909C31.3108 20.2364 31.3292 19.7091 31.3292 15.5C31.3292 11.2909 31.3108 10.7636 31.2374 9.10909C31.1547 7.46364 30.8883 6.33636 30.5026 5.34545ZM15.66 23.4636C11.2146 23.4636 7.61417 19.9 7.61417 15.5C7.61417 11.1 11.2146 7.53636 15.66 7.53636C20.1054 7.53636 23.7059 11.1 23.7059 15.5C23.7059 19.9 20.1054 23.4636 15.66 23.4636ZM24.0273 9.09091C22.9895 9.09091 22.1445 8.25455 22.1445 7.22727C22.1445 6.2 22.9895 5.36364 24.0273 5.36364C25.0652 5.36364 25.9102 6.2 25.9102 7.22727C25.901 8.25455 25.0652 9.09091 24.0273 9.09091ZM20.8861 15.5C20.8861 18.3545 18.5532 20.6636 15.6692 20.6636C12.7852 20.6636 10.4523 18.3545 10.4523 15.5C10.4523 12.6455 12.7852 10.3364 15.6692 10.3364C18.544 10.3364 20.8861 12.6455 20.8861 15.5Z"
-                                fill="#B1B1B1" />
+                    <a class="icon" href="#">
+                        <svg width="32" height="31" viewBox="0 0 32 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M30.5026 5.34545C30.0985 4.32727 29.5657 3.46364 28.6932 2.6C27.8206 1.73636 26.9481 1.20909 25.9194 0.809091C24.9274 0.427273 23.7885 0.172727 22.1169 0.0909091C20.4453 0.0181818 19.9126 0 15.66 0C11.4075 0 10.8748 0.0181818 9.20313 0.0909091C7.54069 0.172727 6.40178 0.427273 5.40064 0.818182C4.37195 1.21818 3.49939 1.74545 2.62684 2.60909C1.75429 3.47273 1.22157 4.33636 0.817444 5.35455C0.431684 6.33636 0.17451 7.46364 0.0918476 9.10909C0.0183695 10.7636 0 11.2909 0 15.5C0 19.7091 0.0183695 20.2364 0.0918476 21.8909C0.17451 23.5455 0.431684 24.6727 0.826628 25.6545C1.23076 26.6727 1.76347 27.5364 2.63603 28.4C3.50858 29.2636 4.38113 29.7909 5.40982 30.1909C6.40178 30.5727 7.54069 30.8364 9.21231 30.9091C10.8839 30.9818 11.4167 31 15.6692 31C19.9217 31 20.4545 30.9818 22.1261 30.9091C23.7885 30.8364 24.9274 30.5727 25.9286 30.1909C26.9573 29.7909 27.8298 29.2636 28.7024 28.4C29.5749 27.5364 30.1076 26.6727 30.5118 25.6545C30.8975 24.6727 31.1639 23.5455 31.2374 21.8909C31.3108 20.2364 31.3292 19.7091 31.3292 15.5C31.3292 11.2909 31.3108 10.7636 31.2374 9.10909C31.1547 7.46364 30.8883 6.33636 30.5026 5.34545ZM15.66 23.4636C11.2146 23.4636 7.61417 19.9 7.61417 15.5C7.61417 11.1 11.2146 7.53636 15.66 7.53636C20.1054 7.53636 23.7059 11.1 23.7059 15.5C23.7059 19.9 20.1054 23.4636 15.66 23.4636ZM24.0273 9.09091C22.9895 9.09091 22.1445 8.25455 22.1445 7.22727C22.1445 6.2 22.9895 5.36364 24.0273 5.36364C25.0652 5.36364 25.9102 6.2 25.9102 7.22727C25.901 8.25455 25.0652 9.09091 24.0273 9.09091ZM20.8861 15.5C20.8861 18.3545 18.5532 20.6636 15.6692 20.6636C12.7852 20.6636 10.4523 18.3545 10.4523 15.5C10.4523 12.6455 12.7852 10.3364 15.6692 10.3364C18.544 10.3364 20.8861 12.6455 20.8861 15.5Z" fill="#B1B1B1" />
                         </svg>
                     </a>
-                    <a class="icon" href=""><svg width="23" height="31" viewBox="0 0 23 31" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M14.7844 8.16901V11.8004H21.8594L20.7281 17.4009H14.7844V31H6.81152V17.4009H0.329102V11.8004H6.81152V7.53538C6.81152 2.67758 10.6184 0 16.4543 0C19.2466 0 22.1646 0.381539 22.1646 0.381539V5.14396H18.9414C15.772 5.14396 14.7844 6.63605 14.7844 8.16901Z"
-                                fill="#B1B1B1" />
+                    <a class="icon" href="#">
+                        <svg width="23" height="31" viewBox="0 0 23 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7844 8.16901V11.8004H21.8594L20.7281 17.4009H14.7844V31H6.81152V17.4009H0.329102V11.8004H6.81152V7.53538C6.81152 2.67758 10.6184 0 16.4543 0C19.2466 0 22.1646 0.381539 22.1646 0.381539V5.14396H18.9414C15.772 5.14396 14.7844 6.63605 14.7844 8.16901Z" fill="#B1B1B1" />
                         </svg>
                     </a>
-                    <a class="icon" href=""><svg width="32" height="29" viewBox="0 0 32 29" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M27.8068 5.1851C29.111 5.01446 30.3496 4.65309 31.4943 4.10102C30.631 5.47619 29.5426 6.69075 28.2853 7.66441C28.2947 7.95551 28.3041 8.25664 28.3041 8.55778C28.3041 17.6419 21.8393 28.1213 10.017 28.1213C6.38584 28.1213 3.00803 26.9871 0.165039 25.0297C0.671711 25.0899 1.17838 25.12 1.69444 25.12C4.70632 25.12 7.47425 24.0159 9.67921 22.179C6.86437 22.1188 4.49052 20.1313 3.67421 17.401C4.06829 17.4813 4.47175 17.5215 4.8846 17.5215C5.47571 17.5215 6.03868 17.4412 6.58289 17.2806C3.64607 16.6482 1.42234 13.8677 1.42234 10.5352C1.42234 10.5051 1.42234 10.475 1.42234 10.4449C2.28556 10.9568 3.28014 11.268 4.33101 11.3081C2.60457 10.0735 1.46925 7.96555 1.46925 5.58661C1.46925 4.33189 1.78827 3.14744 2.34185 2.13362C5.51324 6.29928 10.2516 9.02955 15.5904 9.32064C15.4778 8.81875 15.4215 8.29679 15.4215 7.75476C15.4215 3.96049 18.302 0.878906 21.8487 0.878906C23.6971 0.878906 25.3673 1.71204 26.5401 3.04706C28.0038 2.73589 29.3831 2.16374 30.6217 1.38079C30.1525 2.98683 29.1392 4.33189 27.8068 5.1851Z"
-                                fill="#B1B1B1" />
+                    <a class="icon" href="#"><svg width="32" height="29" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M27.8068 5.1851C29.111 5.01446 30.3496 4.65309 31.4943 4.10102C30.631 5.47619 29.5426 6.69075 28.2853 7.66441C28.2947 7.95551 28.3041 8.25664 28.3041 8.55778C28.3041 17.6419 21.8393 28.1213 10.017 28.1213C6.38584 28.1213 3.00803 26.9871 0.165039 25.0297C0.671711 25.0899 1.17838 25.12 1.69444 25.12C4.70632 25.12 7.47425 24.0159 9.67921 22.179C6.86437 22.1188 4.49052 20.1313 3.67421 17.401C4.06829 17.4813 4.47175 17.5215 4.8846 17.5215C5.47571 17.5215 6.03868 17.4412 6.58289 17.2806C3.64607 16.6482 1.42234 13.8677 1.42234 10.5352C1.42234 10.5051 1.42234 10.475 1.42234 10.4449C2.28556 10.9568 3.28014 11.268 4.33101 11.3081C2.60457 10.0735 1.46925 7.96555 1.46925 5.58661C1.46925 4.33189 1.78827 3.14744 2.34185 2.13362C5.51324 6.29928 10.2516 9.02955 15.5904 9.32064C15.4778 8.81875 15.4215 8.29679 15.4215 7.75476C15.4215 3.96049 18.302 0.878906 21.8487 0.878906C23.6971 0.878906 25.3673 1.71204 26.5401 3.04706C28.0038 2.73589 29.3831 2.16374 30.6217 1.38079C30.1525 2.98683 29.1392 4.33189 27.8068 5.1851Z" fill="#B1B1B1" />
                         </svg>
                     </a>
-                    <a class="icon" href=""><svg width="34" height="27" viewBox="0 0 34 27" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M33.7065 2.53874C33.6236 3.63887 32.9398 7.48453 32.2663 11.6363L30.1422 23.9578C30.1422 23.9578 29.9764 25.7658 28.5258 26.0719C27.0856 26.3876 24.7024 24.9718 24.2776 24.6561C23.9357 24.417 17.9053 20.887 15.6984 19.1651C15.1078 18.6963 14.4239 17.7492 15.7812 16.6587C18.8379 14.0662 22.4955 10.8519 24.7024 8.81426C25.7179 7.87675 26.7436 5.67649 22.4955 8.3455L10.5176 15.7977C10.5176 15.7977 9.1603 16.5821 6.61139 15.8742C4.06248 15.1663 1.08875 14.2288 1.08875 14.2288C1.08875 14.2288 -0.95245 13.0522 2.52899 11.799L22.3297 4.27024C24.288 3.4858 30.9089 0.979418 30.9089 0.979418C30.9089 0.979418 33.9656 -0.120708 33.7065 2.53874Z"
-                                fill="#B1B1B1" />
+                    <a class="icon" href="#"><svg width="34" height="27" viewBox="0 0 34 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M33.7065 2.53874C33.6236 3.63887 32.9398 7.48453 32.2663 11.6363L30.1422 23.9578C30.1422 23.9578 29.9764 25.7658 28.5258 26.0719C27.0856 26.3876 24.7024 24.9718 24.2776 24.6561C23.9357 24.417 17.9053 20.887 15.6984 19.1651C15.1078 18.6963 14.4239 17.7492 15.7812 16.6587C18.8379 14.0662 22.4955 10.8519 24.7024 8.81426C25.7179 7.87675 26.7436 5.67649 22.4955 8.3455L10.5176 15.7977C10.5176 15.7977 9.1603 16.5821 6.61139 15.8742C4.06248 15.1663 1.08875 14.2288 1.08875 14.2288C1.08875 14.2288 -0.95245 13.0522 2.52899 11.799L22.3297 4.27024C24.288 3.4858 30.9089 0.979418 30.9089 0.979418C30.9089 0.979418 33.9656 -0.120708 33.7065 2.53874Z" fill="#B1B1B1" />
                         </svg>
                     </a>
                 </div>
@@ -648,24 +641,28 @@
                         <path d="M22 1L1 22" stroke="white" stroke-width="2" stroke-linecap="round" />
                     </svg>
                 </div>
-                <div class="modal__content">
-                    <img class="modal-feedback__img" src="img/header-modal-decor.png" alt="">
+                <div class="modal__content modal-feedback__content">
+                    <img class="modal-feedback__img" src="img/header-modal-decor.png" alt="фото декор">
                     <div class="modal-feedback__form">
                         <h3 class="modal__title title">Форма обратной связи</h3>
-                        <form class="form" action="">
-                            <p class="form__text">Имя</p>
-                            <input class="form__input modal__input" type="text" placeholder="Введите ваше имя">
-                            <p class="form__text">E-mail</p>
-                            <input class="form__input modal__input" type="text" placeholder="Введите ваш E-mail">
-                            <p class="form__text">Телефон</p>
-                            <input class="form__input modal__input" type="text" placeholder="Введите ваш Телефон">
+                        <form class="form">
+                            <label class="form__text" for="feedback-name">Имя</label>
+                            <input class="form__input modal__input" id="feedback-name" type="text"
+                                placeholder="Введите ваше имя">
+                            <label class="form__text" for="feedback-email">E-mail</label>
+                            <input class="form__input modal__input" id="feedback-email" type="email"
+                                placeholder="Введите ваш E-mail">
+                            <label class="form__text" for="feedback-tel">Телефон</label>
+                            <input class="form__input modal__input" id="feedback-tel" type="number"
+                                placeholder="Введите ваш Телефон">
                             <div class="form__btn-container btn-container modal__btn-container modal-open"
                                 data-modal-open="feedback-thanks">
                                 <button class="form__btn modal__btn btn" type="button">Отправить</button>
                             </div>
                         </form>
                         <p class="feedback__desc">Нажимая кнопку «Отправить», вы даете согласие на обработку
-                            персональных данных и соглашаетесь с <a class="underlined" href="">политикой
+                            персональных данных и соглашаетесь с <a class="feedback__desc--underlined"
+                                href="#">политикой
                                 конфиденциальности</a></p>
                     </div>
                 </div>
@@ -681,11 +678,12 @@
                     <p class="modal-thanks__text">Наши специалисты уже обрабатывают
                         Вашу заявку и свяжутся с Вами в ближайшее время</p>
                 </div>
-                <div class="modal__close"><svg width="23" height="23" viewBox="0 0 23 23" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                <div class="modal__close">
+                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1L22 22" stroke="white" stroke-width="2" stroke-linecap="round" />
                         <path d="M22 1L1 22" stroke="white" stroke-width="2" stroke-linecap="round" />
-                    </svg></div>
+                    </svg>
+                </div>
             </div>
         </div>
     </div>
@@ -693,23 +691,27 @@
     <div class="modal modal-locations" data-modal="modal-locations">
         <div class="modal__bg">
             <div class="modal__body modal-locations__body">
-                <div class="modal__close"><svg width="23" height="23" viewBox="0 0 23 23" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                <div class="modal__close">
+                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1L22 22" stroke="white" stroke-width="2" stroke-linecap="round" />
                         <path d="M22 1L1 22" stroke="white" stroke-width="2" stroke-linecap="round" />
-                    </svg></div>
-                <div class="modal__content">
-                    <img class="modal-locations__img" src="img/locations-modal-decor.svg" alt="">
+                    </svg>
+                </div>
+                <div class="modal__content modal-locations__content">
+                    <img class="modal-locations__img" src="img/locations-modal-decor.svg" alt="фото декор">
                     <div class="modal-locations__form">
                         <h3 class="modal__title title">Форма выбора локации</h3>
-                        <form class="form" action="">
-                            <p class="form__text">Имя</p>
-                            <input class="form__input modal__input" type="text" placeholder="Введите ваше имя">
-                            <p class="form__text">E-mail</p>
-                            <input class="form__input modal__input" type="text" placeholder="Введите ваш E-mail">
-                            <p class="form__text">Телефон</p>
-                            <input class="form__input modal__input" type="text" placeholder="Введите ваш Телефон">
-                            <p class="form__text">Локация</p>
+                        <form class="form">
+                            <label class="form__text" for="locations-name">Имя</label>
+                            <input class="form__input modal__input" id="locations-name" type="text"
+                                placeholder="Введите ваше имя">
+                            <label class="form__text" for="locations-email">E-mail</label>
+                            <input class="form__input modal__input" id="locations-email" type="email"
+                                placeholder="Введите ваш E-mail">
+                            <label class="form__text" for="locations-tel">Телефон</label>
+                            <input class="form__input modal__input" id="locations-tel" type="number"
+                                placeholder="Введите ваш Телефон">
+                            <label class="form__text">Локация</label>
                             <div class="select">
                                 <div class="select__header form__input">
                                     <span class="select__current select__text">Выберите локацию</span>
@@ -745,54 +747,38 @@
     <div class="modal modal-reviews" data-modal="modal-reviews">
         <div class="modal__bg">
             <div class="modal__body modal-reviews__body">
-                <div class="modal__close"><svg width="23" height="23" viewBox="0 0 23 23" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                <div class="modal__close">
+                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1L22 22" stroke="white" stroke-width="2" stroke-linecap="round" />
                         <path d="M22 1L1 22" stroke="white" stroke-width="2" stroke-linecap="round" />
-                    </svg></div>
-                <div class="modal__content">
+                    </svg>
+                </div>
+                <div class="modal__content modal-reviews__content">
                     <div class="modal-reviews__form">
                         <h3 class="modal__title title modal-reviews__title">Оставьте отзыв о том,
                             как прошла ваша фотосессия</h3>
-                        <form class="form" action="">
-                            <p class="form__text">Имя</p>
-                            <input class="form__input modal__input" type="text" placeholder="Введите ваше имя">
-                            <p class="form__text">E-mail</p>
-                            <input class="form__input modal__input" type="text" placeholder="Введите ваш E-mail">
-                            <p class="form__text">Отзыв</p>
-
-
-                            <!-- <div class="form__review ">
+                        <form class="form">
+                            <label class="form__text" for="reviews-name">Имя</label>
+                            <input class="form__input modal__input" id="reviews-name" type="text"
+                                placeholder="Введите ваше имя">
+                            <label class="form__text" for="reviews-email">E-mail</label>
+                            <input class="form__input modal__input" id="reviews-email" type="email"
+                                placeholder="Введите ваш E-mail">
+                            <label class="form__text">Отзыв</label>
+                            <div class="form__review">
                                 <div class="form__review-text form__input" contenteditable="true" data-placeholder="Введите ваш отзыв">
-                                </div>                         
-                            <img class="form__review-img" src="img/reviews-addphoto.svg" alt="">
-                            </div> -->
-
-                            <div class="form__review form__input" contenteditable="true"
-                                data-placeholder="Введите ваш отзыв">
-                                <!-- <div class="form__review-text">
-                                    
-                                    <div class="a">
-                                        <img src="img/logo.svg" alt="">
-                                    </div> -->
-                                <!-- </div> -->
-
-                                <div class="form__add-photo">
-                                    <img class="form__review-img" src="img/reviews-addphoto.svg" alt="">
                                 </div>
+                                    <img class="form__review-img" src="img/reviews-addphoto.svg" alt="фото кнопки">
                             </div>
-
-
-                            <div class="form__btn-container btn-container modal-open" type="button"
-                                data-modal-open="reviews-thanks">
+                            <div class="form__btn-container btn-container modal-open" data-modal-open="reviews-thanks">
                                 <button class="form__btn btn" type="button">Отправить</button>
                             </div>
                         </form>
                         <p class="feedback__desc">Нажимая кнопку «Отправить», вы даете согласие на обработку
-                            персональных данных и соглашаетесь с <a class="underlined" href="">политикой
+                            персональных данных и соглашаетесь с <a class="feedback__desc--underlined" href="">политикой
                                 конфиденциальности</a></p>
                     </div>
-                    <img class="modal-reviews__img" src="img/reviews-modal-decor.svg" alt="">
+                    <img class="modal-reviews__img" src="img/reviews-modal-decor.svg" alt="фото декор">
                 </div>
             </div>
         </div>
@@ -801,11 +787,12 @@
     <div class="modal modal-thanks" data-modal="reviews-thanks">
         <div class="modal__bg">
             <div class="modal__body modal-thanks__body">
-                <div class="modal__close"><svg width="23" height="23" viewBox="0 0 23 23" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                <div class="modal__close">
+                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1L22 22" stroke="white" stroke-width="2" stroke-linecap="round" />
                         <path d="M22 1L1 22" stroke="white" stroke-width="2" stroke-linecap="round" />
-                    </svg></div>
+                    </svg>
+                </div>
                 <div class="modal__content modal-thanks__content">
                     <h3 class="title">Благодарим за оставленный отзыв!</h3>
                 </div>
@@ -818,10 +805,9 @@
             <div class="modal__body modal-extra__body">
                 <div class="modal__content modal-extra__content">
                     <h3 class="modal__title title">Дополнительная ретушь фото</h3>
-                    <form class="form" action="">
-                        <p class="form__text">Количество</p>
-                        <input class="form__input modal__input" type="number" maxlength="10"
-                            placeholder="Введите количество фото для ретуши">
+                    <form class="form">
+                        <label class="form__text" for="amount">Количество</label>
+                        <input class="form__input modal__input" id="amount" type="number" placeholder="Введите количество фото для ретуши">
                         <div class="modal-extra__btn-container form__btn-container btn-container save">
                             <button class="form__btn modal-extra__btn btn" type="button">Сохранить</button>
                         </div>
@@ -837,31 +823,36 @@
                 <div class="modal__content work-gallery__content">
                     <div class="swiper work-gallery__slider">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img class="" src="img/work/slider/01.jpg" alt="photo">
+                            <div class="swiper-slide work-gallery__slide"><img class="" src="img/work/slider/01.jpg"
+                                    alt="фото нашей работы">
                                 <p>Процесс съёмки</p>
                             </div>
-                            <div class="swiper-slide"><img class="" src="img/work/slider/02.jpg" alt="photo">
+                            <div class="swiper-slide work-gallery__slide"><img class="" src="img/work/slider/02.jpg"
+                                    alt="фото нашей работы">
                                 <p>Фотоаппарат</p>
                             </div>
-                            <div class="swiper-slide"><img class="" src="img/work/slider/03.jpg" alt="photo">
+                            <div class="swiper-slide work-gallery__slide"><img class="" src="img/work/slider/03.jpg"
+                                    alt="фото нашей работы">
                                 <p>Мужик с лампой</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="swiper__buttons">
-                    <div class="swiper-button-prev work-gallery__prev"><svg width="24" height="45" viewBox="0 0 24 45"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <button class="swiper-button-prev work-gallery__prev" type="button">
+                        <svg width="24" height="45" viewBox="0 0 24 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M21.4224 42.5L2.58585 23.6651C1.80474 22.8841 1.80471 21.6177 2.58578 20.8366L21.4224 2"
                                 stroke="#E97522" stroke-width="4" stroke-linecap="round" />
-                        </svg></div>
-                    <div class="swiper-button-next work-gallery__next"><svg width="24" height="45" viewBox="0 0 24 45"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                        </svg>
+                    </button>
+                    <button class="swiper-button-next work-gallery__next" type="button">
+                        <svg width="24" height="45" viewBox="0 0 24 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M21.4224 42.5L2.58585 23.6651C1.80474 22.8841 1.80471 21.6177 2.58578 20.8366L21.4224 2"
                                 stroke="#E97522" stroke-width="4" stroke-linecap="round" />
-                        </svg></div>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -873,34 +864,36 @@
                 <div class="modal__content locations-gallery__content">
                     <div class="swiper locations-gallery__slider">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="img/locations/slider/03.jpg" alt="">
+                            <div class="swiper-slide locations-gallery__slide">
+                                <img src="img/locations/slider/01.jpg" alt="фото локации">
                                 <p>Наша локация</p>
                             </div>
-                            <div class="swiper-slide">
-                                <img src="img/locations/slider/02.jpg" alt="">
+                            <div class="swiper-slide locations-gallery__slide">
+                                <img src="img/locations/slider/02.jpg" alt="фото локации">
                                 <p>Наша локация</p>
                             </div>
-                            <div class="swiper-slide">
-                                <img src="img/locations/slider/03.jpg" alt="">
+                            <div class="swiper-slide locations-gallery__slide">
+                                <img src="img/locations/slider/03.jpg" alt="фото локации">
                                 <p>Наша локация</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="swiper__buttons">
-                    <div class="swiper-button-prev locations-gallery__prev"><svg width="24" height="45"
-                            viewBox="0 0 24 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <button class="swiper-button-prev locations-gallery__prev" type="button">
+                        <svg width="24" height="45" viewBox="0 0 24 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M21.4224 42.5L2.58585 23.6651C1.80474 22.8841 1.80471 21.6177 2.58578 20.8366L21.4224 2"
                                 stroke="#E97522" stroke-width="4" stroke-linecap="round" />
-                        </svg></div>
-                    <div class="swiper-button-next locations-gallery__next"><svg width="24" height="45"
-                            viewBox="0 0 24 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        </svg>
+                    </button>
+                    <button class="swiper-button-next locations-gallery__next" type="button">
+                        <svg width="24" height="45" viewBox="0 0 24 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M21.4224 42.5L2.58585 23.6651C1.80474 22.8841 1.80471 21.6177 2.58578 20.8366L21.4224 2"
                                 stroke="#E97522" stroke-width="4" stroke-linecap="round" />
-                        </svg></div>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
