@@ -43,7 +43,7 @@ const locationSwiper = new Swiper('.locations__slider', {
 
   breakpoints: {
     // when window width is >= 375px
-    376: {
+    800: {
     slidesPerView: 3,
     spaceBetween: 27,
     },
@@ -72,8 +72,7 @@ const reviewsSwiper = new Swiper('.reviews__slider', {
   },
 
   breakpoints: {
-    // when window width is >= 375px
-    376: {
+    850: {
     slidesPerView: 2,
     spaceBetween: 21,
     centeredSlides: false,
@@ -262,7 +261,7 @@ saveBtn.addEventListener('click', e => {
 
 // add photo 
 
-let btn = document.querySelector('.form__review-img')
+let btn = document.querySelector('.form__review-btn')
 btn.addEventListener('click', readFile)
 
 function readFile() {
@@ -274,7 +273,7 @@ function readFile() {
 
 // menu
 document.querySelector('.header__menu').addEventListener('click', e => {
-if(e.target.classList.contains('header__menu')||e.target.closest('.header__menu')) {
+if(e.target.classList.contains('header__head')||e.target.closest('.header__head')) {
   let body = e.target.closest('.header__menu').querySelector('.header__body')
   body.classList.toggle('header__body--active')
   document.body.classList.toggle('_locked')
