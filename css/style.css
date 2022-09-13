@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
 @font-face {
   font-family: FuturaLT;
-  src: url(../../fonts/FuturaLT-Bold.ttf);
+  src: url(../fonts/FuturaLT-Bold.ttf);
   font-weight: 700;
 }
 :root {
