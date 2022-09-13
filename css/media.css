@@ -821,6 +821,10 @@
   .modal-thanks__text {
     font-size: 14px;
   }
+  .work-gallery,
+.locations-gallery {
+    z-index: 7;
+  }
   .work-gallery__slider p,
 .locations-gallery__slider p {
     font-size: 14px;
@@ -843,7 +847,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 11;
+    z-index: 8;
   }
   .header__logo-img {
     height: 20px;

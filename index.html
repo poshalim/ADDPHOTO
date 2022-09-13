@@ -37,7 +37,7 @@
                         <button class="contact__btn" type="button">ОБРАТНЫЙ ЗВОНОК</button>
                     </div>
                     <a class="contact__phone" href="tel:+74993446091">+7 (499) 344 60 91</a>
-                    <a class="contact__feedback" href="#"><img src="img/header-feedback.svg" alt="позвонить"></a>
+                    <a class="contact__feedback" href="#"><img src="img/header/header-feedback.svg" alt="позвонить"></a>
                 </div>
             </nav>
         </div>
@@ -56,7 +56,7 @@
                     и еще не раз захотите возвращаться к нам.
                 </p>
                 <div class="promo__btn-container btn-container modal-open" data-modal-open="modal-feedback">
-                    <a class="promo__btn btn" href="#">Получить консультацию</a>
+                    <button class="promo__btn btn">Получить консультацию</button>
                 </div>
                 <button type="button">
                     <svg class="promo__play play" width="135" height="156" viewBox="0 0 135 156" fill="none"
@@ -140,7 +140,7 @@
                     </div>
                 </div>
                 <div class="locations__btn-container btn-container modal-open" data-modal-open="modal-locations">
-                    <a class="locations__btn btn" href="#">выбрать локацию</a>
+                    <button class="locations__btn btn">выбрать локацию</button>
                 </div>
             </div>
         </section>
@@ -492,7 +492,7 @@
                         <img class="gift__buy-image" src="img/gift/01.png" alt="конверт">
                         <p class="gift__buy-text">Срок действия сертификата: 2 месяца со дня приобретения.</p>
                         <div class="gift__btn-container btn-container modal-open" data-modal-open="modal-feedback">
-                            <a class="gift__btn btn">Приобрести</a>
+                            <button class="gift__btn btn">Приобрести</button>
                         </div>
                     </div>
                 </div>
@@ -654,7 +654,7 @@
                     </svg>
                 </div>
                 <div class="modal__content modal-feedback__content">
-                    <img class="modal-feedback__img" src="img/header-modal-decor.png" alt="фото декор">
+                    <img class="modal-feedback__img" src="img/modal/feedback-decor.png" alt="фото декор">
                     <div class="modal-feedback__form">
                         <h3 class="modal__title title">Форма обратной связи</h3>
                         <form class="form">
@@ -710,7 +710,7 @@
                     </svg>
                 </div>
                 <div class="modal__content modal-locations__content">
-                    <img class="modal-locations__img" src="img/locations-modal-decor.svg" alt="фото декор">
+                    <img class="modal-locations__img" src="img/modal/locations-decor.png" alt="фото декор">
                     <div class="modal-locations__form">
                         <h3 class="modal__title title">Форма выбора локации</h3>
                         <form class="form">
@@ -778,8 +778,25 @@
                                 placeholder="Введите ваш E-mail">
                             <label class="form__text">Отзыв</label>
                             <div class="form__review">
-                                <div class="form__review-text form__input" contenteditable="true" data-placeholder="Введите ваш отзыв"></div>
-                                <img class="form__review-btn" src="img/reviews-addphoto.svg" alt="фото кнопки">
+                                <div class="form__review-text form__input" contenteditable="true"
+                                    data-placeholder="Введите ваш отзыв"></div>
+                                <input type="file" name="" id="upload-file" hidden="hidden">
+                                <svg class="form__review-btn" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_106_3901)">
+                                        <path
+                                            d="M15.9991 20.2667C18.3555 20.2667 20.2658 18.3565 20.2658 16.0001C20.2658 13.6436 18.3555 11.7334 15.9991 11.7334C13.6427 11.7334 11.7324 13.6436 11.7324 16.0001C11.7324 18.3565 13.6427 20.2667 15.9991 20.2667Z"
+                                            fill="#BBBDC1" />
+                                        <path
+                                            d="M11.9993 2.66699L9.55935 5.33366H5.33268C3.86602 5.33366 2.66602 6.53366 2.66602 8.00033V24.0003C2.66602 25.467 3.86602 26.667 5.33268 26.667H26.666C28.1327 26.667 29.3327 25.467 29.3327 24.0003V8.00033C29.3327 6.53366 28.1327 5.33366 26.666 5.33366H22.4394L19.9993 2.66699H11.9993ZM15.9993 22.667C12.3193 22.667 9.33268 19.6803 9.33268 16.0003C9.33268 12.3203 12.3193 9.33366 15.9993 9.33366C19.6793 9.33366 22.666 12.3203 22.666 16.0003C22.666 19.6803 19.6793 22.667 15.9993 22.667Z"
+                                            fill="#BBBDC1" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_106_3901">
+                                            <rect width="32" height="32" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
                             </div>
                             <div class="form__btn-container btn-container modal-open" data-modal-open="reviews-thanks">
                                 <button class="form__btn btn" type="button">Отправить</button>
@@ -789,7 +806,7 @@
                             персональных данных и соглашаетесь с <a class="feedback__desc--underlined" href="">политикой
                                 конфиденциальности</a></p>
                     </div>
-                    <img class="modal-reviews__img" src="img/reviews-modal-decor.svg" alt="фото декор">
+                    <img class="modal-reviews__img" src="img/modal/reviews-decor.svg" alt="фото декор">
                 </div>
             </div>
         </div>

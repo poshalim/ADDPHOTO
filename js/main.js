@@ -42,10 +42,9 @@ const locationSwiper = new Swiper('.locations__slider', {
   },
 
   breakpoints: {
-    // when window width is >= 375px
     800: {
-    slidesPerView: 3,
-    spaceBetween: 27,
+      slidesPerView: 3,
+      spaceBetween: 27,
     },
   }
 });
@@ -57,7 +56,7 @@ const locationSwiper2 = new Swiper('.locations-gallery__slider', {
   navigation: {
     nextEl: '.locations-gallery__next',
     prevEl: '.locations-gallery__prev',
-  }, 
+  },
 });
 
 
@@ -73,17 +72,17 @@ const reviewsSwiper = new Swiper('.reviews__slider', {
 
   breakpoints: {
     850: {
-    slidesPerView: 2,
-    spaceBetween: 21,
-    centeredSlides: false,
+      slidesPerView: 2,
+      spaceBetween: 21,
+      centeredSlides: false,
     },
 
     1025: {
       slidesPerView: 3,
       spaceBetween: 16,
       centeredSlides: true,
-      },
-    }
+    },
+  }
 });
 
 
@@ -121,23 +120,23 @@ let body = document.body;
 function openModal(elem) {
   elem.classList.add('modal-active')
   body.classList.add('_locked')
-  }
+}
 
-  function closeModal(e) {
-    if(e.target.classList.contains('modal__close') || e.target.closest('.modal__close') || e.target.classList.contains('modal__bg')) {
-      e.target.closest('.modal').classList.remove('modal-active')
-      body.classList.remove('_locked')
-    }
-    }
+function closeModal(e) {
+  if (e.target.classList.contains('modal__close') || e.target.closest('.modal__close') || e.target.classList.contains('modal__bg')) {
+    e.target.closest('.modal').classList.remove('modal-active')
+    body.classList.remove('_locked')
+  }
+}
 
 modalBtns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     let data = e.target.dataset.modalOpen
     modals.forEach(modal => {
-      if(modal.classList.contains('modal-active')) {
+      if (modal.classList.contains('modal-active')) {
         modal.classList.remove('modal-active')
       }
-      if(modal.dataset.modal == data || modal.dataset.modal == e.target.closest('.modal-open').dataset.modalOpen) {
+      if (modal.dataset.modal == data || modal.dataset.modal == e.target.closest('.modal-open').dataset.modalOpen) {
         openModal(modal)
       }
     })
@@ -148,7 +147,7 @@ modals.forEach(modal => {
   modal.addEventListener('click', e => closeModal(e))
 })
 
-window.addEventListener('keydown', e=> {
+window.addEventListener('keydown', e => {
   modals.forEach(modal => {
     if (e.key === 'Escape' && modal.classList.contains('modal-active')) {
       modal.classList.remove('modal-active')
@@ -157,125 +156,168 @@ window.addEventListener('keydown', e=> {
   })
 })
 
+// window.onload = () => {
 
-// select
-let selectHeader = document.querySelectorAll('.select__header')
-let selectItems = document.querySelectorAll('.select__item')
+  // select
+  let selectHeader = document.querySelectorAll('.select__header')
+  let selectItems = document.querySelectorAll('.select__item')
 
-selectHeader.forEach(elem => {
-  elem.addEventListener('click', e => {
-    let currentSelect = e.target.closest('.select')
-    let currentBody = currentSelect.querySelector('.select__body')
-    currentSelect.classList.toggle('select-active')
-    if(currentSelect.classList.contains('select-active')) {
-      currentBody.style.maxHeight = currentBody.scrollHeight + 'px' 
-    } else {
+  selectHeader.forEach(elem => {
+    elem.addEventListener('click', e => {
+      let currentSelect = e.target.closest('.select')
+      let currentBody = currentSelect.querySelector('.select__body')
+      currentSelect.classList.toggle('select-active')
+      if (currentSelect.classList.contains('select-active')) {
+        currentBody.style.maxHeight = currentBody.scrollHeight + 'px'
+      } else {
+        currentBody.style.maxHeight = 0
+      }
+    })
+  })
+
+
+  selectItems.forEach(elem => {
+    elem.addEventListener('click', e => {
+      let select = e.target.closest('.select')
+      let currentItem = e.target
+      let currentSelect = select.querySelector('.select__current')
+      let currentBody = select.querySelector('.select__body')
+      currentSelect.innerHTML = currentItem.innerHTML
+      select.classList.toggle('select-active')
       currentBody.style.maxHeight = 0
-    }
+      if (currentSelect.classList.contains('select__text')) {
+        currentSelect.classList.remove('select__text')
+      }
+    })
   })
-})
 
 
-selectItems.forEach(elem => {
-  elem.addEventListener('click', e => {
-    let select = e.target.closest('.select')
-    let currentItem = e.target
-    let currentSelect = select.querySelector('.select__current')
-    let currentBody = select.querySelector('.select__body')
-    currentSelect.innerHTML = currentItem.innerHTML
-    select.classList.toggle('select-active')
-    currentBody.style.maxHeight = 0
-    if(currentSelect.classList.contains('select__text')) {
-      currentSelect.classList.remove('select__text')
-    }
-  })
-})
+  // extra 
 
-
-// extra 
-
-priceBtns = document.querySelectorAll('.price__extra-item')
-priceBtns.forEach(btn => {
-let initialSum = btn.closest('.price__item').querySelector('.price__item-sum').innerHTML
+  priceBtns = document.querySelectorAll('.price__extra-item')
+  priceBtns.forEach(btn => {
+    let initialSum = btn.closest('.price__item').querySelector('.price__item-sum').innerHTML
     btn.addEventListener('click', e => {
       currentItem = e.target.closest('.price__item')
       currentSum = currentItem.querySelector('.price__item-sum').innerHTML
-      if(currentItem.querySelector('.extra-visagiste')) {
+      if (currentItem.querySelector('.extra-visagiste')) {
         var sum = currentItem.querySelector('.extra-visagiste').innerHTML
       }
-      
-  if(btn.classList.contains('extra-retouch')) {
-    if(currentItem.querySelector('.extra-retouch').classList.contains('active')) {
-      currentSum = initialSum
-      if(currentItem.querySelector('.extra-visagiste')&&currentItem.querySelector('.extra-visagiste').classList.contains('active')) {
-        currentSum = +initialSum + +sum.match(/\d/g).join('') 
-      }
-    }
-      if(currentSum == 'N') {
-        currentSum = 0
-        }
-      let modal = document.querySelector('.modal-active');
-      let input = modal.querySelector('.form__input')
-      input.addEventListener('keyup', function() {
-        if(input.value.length>3) {
-          input.value = input.value.slice(0,3)
-        }
-      })
-  }
 
-  if(!e.target.classList.contains('extra-retouch')) {
-    e.target.closest('.price__extra-item').classList.toggle('active')
-    if(e.target.classList.contains('extra-visagiste')) {
-        currentItem = e.target.closest('.price__item')
-      if(e.target.classList.contains('active')) {
-        currentItem.querySelector('.price__item-sum').innerHTML = +currentSum + +sum.match(/\d/g).join('') 
-      } else {
-        currentItem.querySelector('.price__item-sum').innerHTML =  currentSum - +sum.match(/\d/g).join('') 
+      if (btn.classList.contains('extra-retouch')) {
+        if (currentItem.querySelector('.extra-retouch').classList.contains('active')) {
+          currentSum = initialSum
+          if (currentItem.querySelector('.extra-visagiste') && currentItem.querySelector('.extra-visagiste').classList.contains('active')) {
+            currentSum = +initialSum + +sum.match(/\d/g).join('')
+          }
+        }
+        if (currentSum == 'N') {
+          currentSum = 0
+        }
+        let modal = document.querySelector('.modal-active');
+        let input = modal.querySelector('.form__input')
+        input.addEventListener('keyup', function () {
+          if (input.value.length > 3) {
+            input.value = input.value.slice(0, 3)
+          }
+        })
       }
-    }
-  }
+
+      if (!e.target.classList.contains('extra-retouch')) {
+        e.target.closest('.price__extra-item').classList.toggle('active')
+        if (e.target.classList.contains('extra-visagiste')) {
+          currentItem = e.target.closest('.price__item')
+          if (e.target.classList.contains('active')) {
+            currentItem.querySelector('.price__item-sum').innerHTML = +currentSum + +sum.match(/\d/g).join('')
+          } else {
+            currentItem.querySelector('.price__item-sum').innerHTML = currentSum - +sum.match(/\d/g).join('')
+          }
+        }
+      }
+    })
   })
-})
 
 
-let saveBtn = document.querySelector('.save');
-saveBtn.addEventListener('click', e => {
-  let modal = document.querySelector('.modal-active');
-  let amount = +modal.querySelector('.form__input').value
-  let current = +currentSum + amount*250
-  if(amount>=0&&amount<=500) {
-    currentItem.querySelector('.price__item-sum').innerHTML = current
-    modal.classList.remove('modal-active')
-    document.body.classList.toggle('_locked')
-  } else {
-    alert('Введите число от 0 до 500')
-  }
+  let saveBtn = document.querySelector('.save');
+  saveBtn.addEventListener('click', e => {
+    let modal = document.querySelector('.modal-active');
+    let amount = +modal.querySelector('.form__input').value
+    let current = +currentSum + amount * 250
+    if (amount >= 0 && amount <= 500) {
+      currentItem.querySelector('.price__item-sum').innerHTML = current
+      modal.classList.remove('modal-active')
+      document.body.classList.toggle('_locked')
+    } else {
+      alert('Введите число от 0 до 500')
+    }
 
-  if(amount!=0) {
-    currentItem.querySelector('.extra-retouch').classList.add('active')
-  } else {
-    currentItem.querySelector('.extra-retouch').classList.remove('active')
-  }
-})
-
-
-// add photo 
-
-let btn = document.querySelector('.form__review-btn')
-btn.addEventListener('click', readFile)
-
-function readFile() {
-  let input = document.createElement('input');
-  input.type = 'file';
-  input.click();
-}
+    if (amount != 0) {
+      currentItem.querySelector('.extra-retouch').classList.add('active')
+    } else {
+      currentItem.querySelector('.extra-retouch').classList.remove('active')
+    }
+  })
 
 
-// menu
-document.querySelector('.header__menu').addEventListener('click', e => {
-if(e.target.classList.contains('header__head')||e.target.closest('.header__head')) {
-  let body = e.target.closest('.header__menu').querySelector('.header__body')
-  body.classList.toggle('header__body--active')
-  document.body.classList.toggle('_locked')
-}
-})
+  // add photo 
+
+  let uploadfile = document.getElementById('upload-file')
+  let btn = document.querySelector('.form__review-btn')
+
+  btn.addEventListener('click', function () {
+    uploadfile.click();
+  })
+
+  let div = document.createElement('div')
+  div.className = 'form__review-box'
+  div.setAttribute("contenteditable", "false")
+
+  uploadfile.addEventListener('change', function () {
+    if (uploadfile.value) {
+      let reviewText = document.querySelector('.form__review-text')
+
+      if (!reviewText.querySelector('.form__review-box')) {
+        reviewText.appendChild(div)
+      }
+
+      let item = document.createElement('div')
+      item.className = 'form__review-item'
+      let close = document.createElement('div')
+      close.className = 'form__review-close'
+      let img = document.createElement('img')
+      img.className = 'form__review-img'
+      div.appendChild(item)
+      item.appendChild(img)
+      item.appendChild(close)
+
+      let file = uploadfile.files[0]
+      let reader = new FileReader()
+      reader.readAsDataURL(file)
+      reader.onload = function () {
+        img.src = reader.result
+      }
+
+
+      let closebtn = document.querySelectorAll('.form__review-close')
+      closebtn.forEach(btn => {
+        btn.addEventListener('click', e => {
+          let currentItem = e.target.closest('.form__review-item')
+          currentItem.remove()
+        })
+      })
+
+    }
+  })
+
+
+
+  // menu
+  document.querySelector('.header__menu').addEventListener('click', e => {
+    if (e.target.classList.contains('header__head') || e.target.closest('.header__head')) {
+      let body = e.target.closest('.header__menu').querySelector('.header__body')
+      body.classList.toggle('header__body--active')
+      document.body.classList.toggle('_locked')
+    }
+  })
+
+// }
