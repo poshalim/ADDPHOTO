@@ -156,8 +156,6 @@ window.addEventListener('keydown', e => {
   })
 })
 
-// window.onload = () => {
-
   // select
   let selectHeader = document.querySelectorAll('.select__header')
   let selectItems = document.querySelectorAll('.select__item')
@@ -194,67 +192,74 @@ window.addEventListener('keydown', e => {
 
   // extra 
 
-  priceBtns = document.querySelectorAll('.price__extra-item')
-  priceBtns.forEach(btn => {
-    let initialSum = btn.closest('.price__item').querySelector('.price__item-sum').innerHTML
+  var modal
+  var currentItem
+  var currentSum
+
+  var priceBtns = document.querySelectorAll('.price__extra-item')
+  priceBtns.forEach(btn => { // вешаем событие клика на услугу
+    var initialSum = btn.closest('.price__item').querySelector('.price__item-sum').innerHTML // записываем начальную цену тарифа
     btn.addEventListener('click', e => {
-      currentItem = e.target.closest('.price__item')
-      currentSum = currentItem.querySelector('.price__item-sum').innerHTML
-      if (currentItem.querySelector('.extra-visagiste')) {
-        var sum = currentItem.querySelector('.extra-visagiste').innerHTML
+      currentItem = e.target.closest('.price__item') // текущий айтем
+      currentSum = currentItem.querySelector('.price__item-sum').innerHTML // текущая сумма которая будет изменяться
+
+      if (currentItem.querySelector('.extra-visagiste')) { // проверяем есть ли в айтем услуга визажиста
+        var sum = currentItem.querySelector('.extra-visagiste').innerHTML // если есть записываем цифру из этой услуги
       }
 
-      if (btn.classList.contains('extra-retouch')) {
-        if (currentItem.querySelector('.extra-retouch').classList.contains('active')) {
-          currentSum = initialSum
-          if (currentItem.querySelector('.extra-visagiste') && currentItem.querySelector('.extra-visagiste').classList.contains('active')) {
-            currentSum = +initialSum + +sum.match(/\d/g).join('')
+      if (e.target.classList.contains('extra-retouch')) { // проверяем доп ретушь ли это 
+        if(currentItem.querySelector('.extra-retouch').classList.contains('active')) { // проверяем активна ли эта доп ретушь
+          currentSum = initialSum // если да то в текущую сумму записываем начальную
+          if (currentItem.querySelector('.extra-visagiste') && currentItem.querySelector('.extra-visagiste').classList.contains('active')) { // если уже была выбрана услуги визажиста
+            currentSum = +initialSum + +sum.match(/\d/g).join('') // тогда прибавляем к текущей стоимости услуги визажиста
           }
-        }
-        if (currentSum == 'N') {
+        }  
+        if (currentSum == 'N') { // если n то текущая сумма = 0
           currentSum = 0
         }
-        let modal = document.querySelector('.modal-active');
-        let input = modal.querySelector('.form__input')
-        input.addEventListener('keyup', function () {
+        modal = document.querySelector('.modal-active'); // записываем открывшееся модальное окно
+        var input = modal.querySelector('.form__input') // инпут в этом модальном окне
+        input.addEventListener('keyup', function () { // вешаем на него событие
           if (input.value.length > 3) {
-            input.value = input.value.slice(0, 3)
+            input.value = input.value.slice(0, 3) // не даем написать больше 3 цифр
           }
         })
       }
 
-      if (!e.target.classList.contains('extra-retouch')) {
-        e.target.closest('.price__extra-item').classList.toggle('active')
-        if (e.target.classList.contains('extra-visagiste')) {
-          currentItem = e.target.closest('.price__item')
-          if (e.target.classList.contains('active')) {
-            currentItem.querySelector('.price__item-sum').innerHTML = +currentSum + +sum.match(/\d/g).join('')
-          } else {
-            currentItem.querySelector('.price__item-sum').innerHTML = currentSum - +sum.match(/\d/g).join('')
+      else if (!e.target.classList.contains('extra-retouch')) { // если это не екстра ретушь
+        e.target.closest('.price__extra-item').classList.toggle('active') // тогда переключаем класс актив
+        if (e.target.classList.contains('extra-visagiste')) { // если это услуги визажиста
+          // currentItem = e.target.closest('.price__item') 
+          if (e.target.classList.contains('active')) { // если уже был класс актив
+            currentItem.querySelector('.price__item-sum').innerHTML = +currentSum + +sum.match(/\d/g).join('') // вместо суммы записываем начальную сумму + цену визажиста
+          } else { // если еще не было класса актив
+            currentItem.querySelector('.price__item-sum').innerHTML = currentSum - +sum.match(/\d/g).join('') // из суммы вычитаем цену визажиста
           }
         }
       }
     })
   })
+  
 
+  
+  var saveBtn = document.querySelector('.save'); // кнопка сохранить в модальном окне
+  saveBtn.addEventListener('click', e => { // вешаем на нее клик
+    var amount = modal.querySelector('.form__input').value // цирфа которую пользователь ввел в инпут
+    var current = +currentSum + amount * 250 // рассчитываем и записываем сумму с учет выбранных до этого услуг
+    console.log(current)
 
-  let saveBtn = document.querySelector('.save');
-  saveBtn.addEventListener('click', e => {
-    let modal = document.querySelector('.modal-active');
-    let amount = +modal.querySelector('.form__input').value
-    let current = +currentSum + amount * 250
-    if (amount >= 0 && amount <= 500) {
-      currentItem.querySelector('.price__item-sum').innerHTML = current
-      modal.classList.remove('modal-active')
-      document.body.classList.toggle('_locked')
+    if (amount >= 0 && amount <= 500) { // если пользователь ввел от 0 до 500
+      currentItem.querySelector('.price__item-sum').innerHTML = current // меняем цену текущего тарифа на рассчитанную
+      modal.classList.remove('modal-active') // прячем модальное окно
+      document.body.classList.toggle('_locked') // разблокируем body
     } else {
-      alert('Введите число от 0 до 500')
+      alert('Введите число от 0 до 500') // alert
     }
 
-    if (amount != 0) {
-      currentItem.querySelector('.extra-retouch').classList.add('active')
+    if (+amount != 0) { // если amount не 0
+      currentItem.querySelector('.extra-retouch').classList.add('active') // добавляем active на доп ретушь
     } else {
-      currentItem.querySelector('.extra-retouch').classList.remove('active')
+      currentItem.querySelector('.extra-retouch').classList.remove('active') // удаляем ее
     }
   })
 
@@ -320,4 +325,36 @@ window.addEventListener('keydown', e => {
     }
   })
 
-// }
+
+  // calc postition close for modal
+
+  let closeBtns = document.querySelectorAll('.modal__close')
+  closeBtns.forEach(btn => {
+    let currentBody = btn.closest('.modal').querySelector('.modal__body')
+    if(window.innerWidth>970) {
+    btn.style.right = (window.innerWidth - currentBody.clientWidth) / 2 + 'px'
+    btn.style.top =  (window.innerHeight - currentBody.clientHeight) / 2 - 36 + 'px'
+    }
+    else {
+      btn.style.right = (window.innerWidth - currentBody.clientWidth) / 2 + 12 + 'px'
+      btn.style.top =  (window.innerHeight - currentBody.clientHeight) / 2 + 12 + 'px'
+    }
+  })
+
+
+  window.addEventListener('resize', function() { // если размеры экрана меняются расположение высчитывается заново
+
+    let closeBtns = document.querySelectorAll('.modal__close')
+    closeBtns.forEach(btn => {
+      let currentBody = btn.closest('.modal').querySelector('.modal__body')
+      if(window.innerWidth>970) {
+      btn.style.right = (window.innerWidth - currentBody.clientWidth) / 2 + 'px'
+      btn.style.top =  (window.innerHeight - currentBody.clientHeight) / 2 - 36 + 'px'
+      }
+      else {
+        btn.style.right = (window.innerWidth - currentBody.clientWidth) / 2 + 12 + 'px'
+        btn.style.top =  (window.innerHeight - currentBody.clientHeight) / 2 + 12 + 'px'
+      }
+    })
+  
+  })
