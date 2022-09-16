@@ -246,7 +246,6 @@ window.addEventListener('keydown', e => {
   saveBtn.addEventListener('click', e => { // вешаем на нее клик
     var amount = modal.querySelector('.form__input').value // цирфа которую пользователь ввел в инпут
     var current = +currentSum + amount * 250 // рассчитываем и записываем сумму с учет выбранных до этого услуг
-    console.log(current)
 
     if (amount >= 0 && amount <= 500) { // если пользователь ввел от 0 до 500
       currentItem.querySelector('.price__item-sum').innerHTML = current // меняем цену текущего тарифа на рассчитанную
